@@ -7,11 +7,15 @@ const mainEntry = document.querySelector('#mainEntry');
 const entryMood = document.querySelector('#entryMood');
 
 const journalEntry = {
-    date: this.entryDate,
-    concepts: this.entryTitle,
-    entry: this.mainEntry,
-    mood: this.entryMood
+    date: "September 16, 2019",
+    concepts: "Objects in Javascript",
+    entry: "We learned about objects!",
+    mood: "Awesome"
 }
+
+
+entries.push(journalEntry);
+console.table(entries);
 
 
 
