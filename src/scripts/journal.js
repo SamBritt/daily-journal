@@ -17,19 +17,19 @@
 // entries.push(journalEntry);
 // console.table(entries);
 
-//Journal Entry p3
+//Journal Entry p3////////
 const entryDate = document.querySelector('#journalDate');
 const entryTitle = document.querySelector('#entryTitle');
 const mainEntry = document.querySelector('#mainEntry');
 const entryMood = document.querySelector('#entryMood');
 const entryLog = document.querySelector('.entryLog');
 
-const journalEntries = [{
-    date: "September 16, 2019",
-    concepts: "Objects in Javascript",
-    entry: "We learned about objects!",
-    mood: "Awesome"
-}];
+// const journalEntries = [{
+//     date: "September 16, 2019",
+//     concepts: "Objects in Javascript",
+//     entry: "We learned about objects!",
+//     mood: "Awesome"
+// }];
 
 const makeJournalEntryComponent = (journalEntry) => {
     // Create your own HTML structure for a journal entry
@@ -44,11 +44,22 @@ const makeJournalEntryComponent = (journalEntry) => {
 }
 
 const renderJournalEntries = (entries) => {
-    for(let item in entries){
-        entryLog.innerHTML += makeJournalEntryComponent(entries[item]);
-    }
+    entries.forEach(element => {
+        entryLog.innerHTML += makeJournalEntryComponent(element);
+    });
+    
 }
 
-renderJournalEntries(journalEntries);
+// renderJournalEntries(journalEntries);
+///////////
+//p4
+
+const getEntries = () => {
+    return fetch("http://localhost:3000/entries")
+        .then(response => response.json())
+}
+
+getEntries().then(r => renderJournalEntries(r));
+
 
 

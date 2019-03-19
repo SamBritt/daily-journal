@@ -1,0 +1,16 @@
+{
+    "entries": [
+        {
+            "date": "September 16, 2019",
+            "concepts": "Objects in Javascript",
+            "entry": "We learned about objects!",
+            "mood": "Awesome"
+        },
+        {
+            "date": "October 17, 2019",
+            "concepts": "Properties of Objects",
+            "entry": "We learned about properties!!",
+            "mood": "Awesome"
+        }
+    ]
+}
