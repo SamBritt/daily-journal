@@ -14,35 +14,38 @@
 
         <fieldset>
             <label for="journalDate">Date of Entry</label>
-            <input type="date" name="journalDate" id = "journalDate" >
+            <input type="date" name="journalDate" id = "journalDate" required>
         </fieldset>
 
         <fieldset>
             <label for="conceptsCovered">Concepts Covered</label>
-            <input type="text" id = "entryTitle">
+            <input type="text" id = "entryTitle" required>
         </fieldset>
 
         <fieldset>
             <label for="journalEntry">Journal Entry</label>
-            <textarea id = "mainEntry" name="journalEntry" id="" cols="30" rows="5"></textarea>
+            <textarea name="journalEntry" id="journalEntry" cols="30" rows="5" required></textarea>
         </fieldset>
 
         <fieldset>
             <label for="mood">Mood</label>
-            <select id = "entryMood" name="mood">
-                <option value="0">Bad chain of Events</option>
-                <option value="1">Getting out of the gutter</option>
-                <option value="2">Needs to study</option>
-                <option value="3">Good; Could use practice</option>
-                <option value="4">Solid</option>
-                <option value="5">Overconfident</option>
+            <select id = "entryMood" name="mood" required>
+                <option>Bad chain of Events</option>
+                <option>Getting out of the gutter</option>
+                <option>Needs to study</option>
+                <option>Good; Could use practice</option>
+                <option>Solid</option>
+                <option>Overconfident</option>
             </select>
         </fieldset>
-        <button type="submit">Record Journal Entry</button>
+        <button id = "recordEntryButton" type="button">Record Journal Entry</button>
         <article class="entryLog">
 
         </article>
     </form>
+    <script src="src/scripts/data.js"></script>
+    <script src="src/scripts/entriesDOM.js"></script>
+    <script src="src/scripts/entryComponent.js"></script>
     <script src="src/scripts/journal.js"></script>
 </body>
 

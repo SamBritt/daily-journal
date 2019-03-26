@@ -18,11 +18,7 @@
 // console.table(entries);
 
 //Journal Entry p3////////
-const entryDate = document.querySelector('#journalDate');
-const entryTitle = document.querySelector('#entryTitle');
-const mainEntry = document.querySelector('#mainEntry');
-const entryMood = document.querySelector('#entryMood');
-const entryLog = document.querySelector('.entryLog');
+
 
 // const journalEntries = [{
 //     date: "September 16, 2019",
@@ -31,35 +27,31 @@ const entryLog = document.querySelector('.entryLog');
 //     mood: "Awesome"
 // }];
 
-const makeJournalEntryComponent = (journalEntry) => {
-    // Create your own HTML structure for a journal entry
-    return `
-        <section>Journal Entry:
-        <div>Date: ${journalEntry.date}</div>
-        <div>Concepts: ${journalEntry.concepts}</div>
-        <div>Entry: ${journalEntry.entry}</div>
-        <div>Mood: ${journalEntry.mood}</div>
-        </section>
-    `
-}
-
-const renderJournalEntries = (entries) => {
-    entries.forEach(element => {
-        entryLog.innerHTML += makeJournalEntryComponent(element);
-    });
-    
-}
 
 // renderJournalEntries(journalEntries);
 ///////////
 //p4
 
-const getEntries = () => {
-    return fetch("http://localhost:3000/entries")
-        .then(response => response.json())
-}
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
+    */
+   let dateField = document.querySelector('#journalDate')
+   let conceptsField = document.querySelector('#entryTitle')
+   let entryField = document.querySelector('#journalEntry')
+   let moodField = document.querySelector('#entryMood')
 
-getEntries().then(r => renderJournalEntries(r));
+let recordJournal = document.getElementById('recordEntryButton');
+recordJournal.addEventListener("click", () => {
+    if (event.target !== null) {
+        console.log(`Date: ${dateField.value}, Concepts: ${conceptsField.value}, Entry: ${entryField.value}, Mood: ${moodField.value}`)
+    }
+})
+
+API.getJournalEntries().then(r => journalEntries.renderjournalEntries(r));
+console.log(API)
+
+
 
 
 
