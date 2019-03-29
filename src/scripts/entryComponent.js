@@ -1,19 +1,16 @@
-const entryDate = document.querySelector('#journalDate');
-const entryTitle = document.querySelector('#entryTitle');
-const mainEntry = document.querySelector('#mainEntry');
-const entryMood = document.querySelector('#entryMood');
 const entryLog = document.querySelector('.entryLog');
 
 
 
+
 const makeJournalEntryComponent = (journalEntry) => {
-    const section = buildElement('section', undefined);
-    section.appendChild(buildElement("h1", `journal-entry--${journalEntry.id}`, "Journal Entry: "))
+    const section = buildElement('section', `journal-entry--${journalEntry.id}`, undefined);
+    section.appendChild(buildElement("h1", undefined, "Journal Entry: "))
     section.appendChild(buildElement('div', undefined, `${journalEntry.date}`));
     section.appendChild(buildElement('div', undefined, `${journalEntry.concepts}`));
     section.appendChild(buildElement('div', undefined, `${journalEntry.entry}`));
     section.appendChild(buildElement('div', undefined, `${journalEntry.mood}`));
-    
+
     return section;
 }
 

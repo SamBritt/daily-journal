@@ -36,16 +36,11 @@
     Main application logic that uses the functions and objects
     defined in the other JavaScript files.
     */
-let dateField = document.querySelector('#journalDate')
-let conceptsField = document.querySelector('#entryTitle')
-let entryField = document.querySelector('#journalEntry')
-let moodField = document.querySelector('#entryMood')
 
-let recordJournal = document.getElementById('recordEntryButton');
-let entryToPost;
+// let recordJournal = document.getElementById('recordEntryButton');
 
-recordJournal.addEventListener("click", handlePost);
-
+buildForm();
+document.getElementById('recordEntryButton').addEventListener("click", handlePost);
 API.getJournalEntries().then(r => renderjournalEntries(r));
 console.log(API)
 
