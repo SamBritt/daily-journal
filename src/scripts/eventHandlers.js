@@ -12,8 +12,35 @@ const handleFilterPosts = () => {
     let valueToFind = event.target.value;
     API.getJournalEntries().then(response => {
         let filtered = response.filter(e => {
-            e.mood === valueToFind;
+            return e.mood == valueToFind;
         })
-        console.log(filtered);
+        renderjournalEntries(filtered);
     })
+}
+const handleDelete = () => {
+    let targetId = event.target.parentNode.id.split('--')[1];
+    API.deleteEntry(targetId).then(() => API.getJournalEntries()).then(r => renderjournalEntries(r));
+}
+const handleEdit = () => {
+    let targetId = event.target.parentNode.id.split('--')[1];
+
+    let journalSection = document.querySelector(`#journal-entry--${targetId}`);
+    clearElement(journalSection);
+
+    API.getEntry(targetId).then(journalToEdit => {
+        const editForm = buildEditForm(journalToEdit);
+        journalSection.appendChild(editForm);
+    })
+}
+const handleUpdate = () => {
+    console.log('Updated!')
+    let targetId = event.target.parentNode.id.split("--")[1];
+
+    const editJournalDate = document.querySelector(`#editJournalDate--${targetId}`);
+    const editJournalConcepts = document.querySelector(`#editJournalConcepts--${targetId}`);
+    const editJournalEntry = document.querySelector(`#editJournalEntry--${targetId}`);
+    const editJournalMood = document.querySelector(`#editJournalMood--${targetId}`);
+
+    console.log(editJournalDate.value, editJournalConcepts.value, editJournalEntry.value, editJournalMood.value)
+
 }

@@ -10,6 +10,12 @@ const makeJournalEntryComponent = (journalEntry) => {
     section.appendChild(buildElement('div', undefined, `${journalEntry.concepts}`));
     section.appendChild(buildElement('div', undefined, `${journalEntry.entry}`));
     section.appendChild(buildElement('div', undefined, `${journalEntry.mood}`));
+    let journalButton = buildElement('button', `deleteButton--${journalEntry.id}`, 'Delete');
+    journalButton.addEventListener('click', handleDelete)
+    section.appendChild(journalButton)
+    let editButton = buildElement('button', `editButton--${journalEntry.id}`, 'Edit');
+    editButton.addEventListener('click', handleEdit);
+    section.appendChild(editButton)
 
     return section;
 }
