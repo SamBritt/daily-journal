@@ -1,17 +1,10 @@
 {
   "entries": [
     {
-      "date": "2019-03-05",
-      "concepts": "Objects",
-      "entry": "Great Job man",
-      "mood": "Solid",
-      "id": 1
-    },
-    {
-      "date": "2019-03-05",
-      "concepts": "Methods",
-      "entry": "Cool beans",
-      "mood": "Solid",
+      "date": "2019-03-20",
+      "concepts": "Arrays",
+      "entry": "Cool Leagues",
+      "mood": "Not well",
       "id": 2
     },
     {
@@ -25,7 +18,7 @@
       "date": "2019-03-05",
       "concepts": "callBack Functions",
       "entry": "Wow dude",
-      "mood": "Confident",
+      "mood": "Good",
       "id": 4
     },
     {

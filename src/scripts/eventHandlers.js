@@ -41,6 +41,15 @@ const handleUpdate = () => {
     const editJournalEntry = document.querySelector(`#editJournalEntry--${targetId}`);
     const editJournalMood = document.querySelector(`#editJournalMood--${targetId}`);
 
+    let postToPut = {
+        "date": editJournalDate.value,
+        "concepts":editJournalConcepts.value,
+        "entry": editJournalEntry.value,
+        "mood": editJournalMood.value
+    }
+
+    API.putEntry(targetId, postToPut).then(() => API.getJournalEntries()).then(r => renderjournalEntries(r));
+
     console.log(editJournalDate.value, editJournalConcepts.value, editJournalEntry.value, editJournalMood.value)
 
 }

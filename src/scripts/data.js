@@ -20,5 +20,16 @@ const API = {
         return fetch(`http://localhost:3000/entries/${journalEntryId}`, {
             method: "DELETE"
         })
+    },
+
+    putEntry(journalEntryId, entry){
+        return fetch(`http://localhost:3000/entries/${journalEntryId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(entry)
+        })
     }
+
 }
