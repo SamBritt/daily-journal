@@ -39,3 +39,15 @@ section{
     align-items: center;
     text-align: center;
 }
+#radioAndSearch{
+    display: flex;
+}
+#radioDiv{
+    display: flex;
+    width: 40vw;
+}
+#searchDiv{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+}
