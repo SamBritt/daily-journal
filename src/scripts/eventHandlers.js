@@ -43,7 +43,7 @@ const handleUpdate = () => {
 
     let postToPut = {
         "date": editJournalDate.value,
-        "concepts":editJournalConcepts.value,
+        "concepts": editJournalConcepts.value,
         "entry": editJournalEntry.value,
         "mood": editJournalMood.value
     }
@@ -52,4 +52,19 @@ const handleUpdate = () => {
 
     console.log(editJournalDate.value, editJournalConcepts.value, editJournalEntry.value, editJournalMood.value)
 
+}
+const handleSearch = () => {
+    console.log("search clicked!")
+    let valueToFind = document.querySelector("#searchInput").value;
+    console.log(valueToFind)
+
+    API.getJournalEntries().then(journalEntry => {
+        let filtered = journalEntry.filter(element => {
+            return Object.keys(element).some(thing => {
+                console.log(element[thing])
+                return String(element[thing]).toLowerCase().indexOf(valueToFind.toLowerCase()) !== -1;
+            });
+        });
+        return filtered;
+    }).then(r => renderjournalEntries(r))
 }

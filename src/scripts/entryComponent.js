@@ -1,4 +1,5 @@
 const entryLog = document.querySelector('.entryLog');
+const entryArticle = buildElement("article", "entryArticle")
 
 
 

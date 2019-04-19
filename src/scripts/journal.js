@@ -39,9 +39,11 @@
 
 // let recordJournal = document.getElementById('recordEntryButton');
 
+
 buildForm();
-document.getElementById('recordEntryButton').addEventListener("click", handlePost);
+buildSearch();
 API.getJournalEntries().then(r => renderjournalEntries(r));
+document.getElementById('recordEntryButton').addEventListener("click", handlePost);
 console.log(API)
 
 

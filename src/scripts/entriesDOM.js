@@ -11,11 +11,15 @@ const clearElement = domElement => {
   
 const renderjournalEntries = (entries) => {
     let docFrag = document.createDocumentFragment();
+    entryLog.appendChild(entryArticle)
     entries.forEach(element => {
         docFrag.appendChild(makeJournalEntryComponent(element));
     });
-    clearElement(entryLog);
-    entryLog.appendChild(docFrag)
+    let articleToClear = document.querySelector("#entryArticle")
+    clearElement(articleToClear);
+    entryArticle.appendChild(docFrag)
+    // entryLog.appendChild(docFrag)
+
 }
 
 const buildElement = (element, elementId, elementTextContent, elementValue) => {
